@@ -1,0 +1,4 @@
+for euler 68
+The string after calculation is
+
+653 ; 1031; 914;842;725
