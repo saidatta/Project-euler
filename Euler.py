@@ -1,5 +1,5 @@
 
-m math import sqrt, ceil
+from math import sqrt, ceil
 import random
  
 def factorial(n): return reduce(lambda x,y:x*y,range(1,n+1),1)
