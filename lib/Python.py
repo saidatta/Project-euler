@@ -14,5 +14,5 @@ for x in range(1,sqr_bound):
 			break
 		if(isPalindromic(i)):
 			set_items.add(i)
-print  sum(set_items),len(set_items)
+print(sum(set_items), len(set_items))
 

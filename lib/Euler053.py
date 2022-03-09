@@ -7,4 +7,4 @@ for n in range(23, maxn+1):
     if binomial(n, r) > limit:
       c += n + 1 - 2*r
       break
-print "Answer to PE53 = ", c
+print("Answer to PE53 = ", c)

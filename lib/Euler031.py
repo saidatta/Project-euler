@@ -13,4 +13,4 @@ ways = [1]+[0]*target
 for c in coins:
 	for i in range(c, target+1):#c to 200.
 		ways[i] += ways[i-c]
-print ways[target]
+print(ways[target])

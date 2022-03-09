@@ -1,4 +1,4 @@
-
+from functools import reduce
 from math import sqrt, ceil
 import random
  

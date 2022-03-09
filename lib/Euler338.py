@@ -11,7 +11,7 @@ def F(w,h):
 	
 	        if w%(w-x)==0 or x%(x-h)==0:
 	            r += 1
-                    x += 1
+                x += 1
 
           return r
 
@@ -22,4 +22,6 @@ def G(N):
             s += F(w,h)
 
     return s
-print r,s
+
+
+print(r, s)

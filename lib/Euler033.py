@@ -17,6 +17,6 @@ for i in range (1,10):
 		for k in range(1,j):
 			di = k*10 +i
 			dj = float(i)*10 +j
-			if(k*dj == di*j):
+			if k*dj == di*j:
 				d *= dj/di
-print d
+print(d)
