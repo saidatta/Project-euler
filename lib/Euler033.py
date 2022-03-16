@@ -11,12 +11,17 @@ If the product of these four fractions is given in its lowest common terms, find
 '''
 
 #
+from lib.Euler import gcd
+
 d = 1
+numProd, denProd = 1,1
 for i in range (1,10):
-	for j in range(1,i):
-		for k in range(1,j):
-			di = k*10 +i
-			dj = float(i)*10 +j
-			if k*dj == di*j:
-				d *= dj/di
-print(d)
+	for den in range(1,i):
+		for num in range(1,den):
+			di = num * 10 + i
+			denTemp = i * 10 + den
+			if num * denTemp == di*den:
+				numProd *= num
+				denProd *= den
+
+print(denProd/gcd(numProd, denProd))
