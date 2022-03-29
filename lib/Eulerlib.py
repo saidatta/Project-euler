@@ -21,14 +21,6 @@ def sqrt(x):
 	return y
 
 
-# Tests whether x is a perfect square, for any integer x.
-def is_square(x):
-	if x < 0:
-		return False
-	y = sqrt(x)
-	return y * y == x
-
-
 # Tests whether the given integer is a prime number.
 def is_prime(x):
 	if x <= 1:
@@ -80,12 +72,6 @@ def list_totients(n):
 			for j in range(i, len(result), i):
 				result[j] -= result[j] // i
 	return result
-
-
-def binomial(n, k):
-	assert 0 <= k <= n
-	return math.factorial(n) // (math.factorial(k) * math.factorial(n - k))
-
 
 # Returns x^-1 mod m. Note that x * x^-1 mod m = x^-1 * x mod m = 1.
 def reciprocal_mod(x, m):

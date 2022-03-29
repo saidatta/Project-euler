@@ -1,4 +1,4 @@
-from Euler import is_prime
+from lib.Euler import is_prime
 
 limit = 2_000_000
 # limit = 10

@@ -1,7 +1,15 @@
+import math
 from functools import reduce
 from math import sqrt, ceil
 import random
 
+
+# Tests whether x is a perfect square, for any integer x.
+def is_square(x):
+    if x < 0:
+        return False
+    y = sqrt(x)
+    return y * y == x
 
 def factorial(n): return reduce(lambda x, y: x * y, range(1, n + 1), 1)
 
@@ -23,6 +31,9 @@ def list_primality(n):
             for j in range(i * i, len(result), i):
                 result[j] = False
     return result
+
+def digits(n):
+    return list(map(int, str(n)))
 
 def is_prime(n):
     if n == 2 or n == 3: return True
@@ -114,13 +125,9 @@ def perm(n, s):
     q, r = divmod(n, factorial(len(s) - 1))
     return s[q] + perm(r, s[:q] + s[q + 1:])
 
-
 def binomial(n, k):
-    nt = 1
-    for t in range(min(k, n - k)):
-        nt = nt * (n - t) // (t + 1)
-    return nt
-
+    assert 0 <= k <= n
+    return math.factorial(n) // (math.factorial(k) * math.factorial(n - k))
 
 def prime_sieve(end):
     assert end > 0, "end must be >0"
@@ -186,3 +193,51 @@ def prime_sieve(end):
     primes.extend([i for i in range(s, end, 2) if sieve[i >> 1]])
 
     return primes
+
+def from_digits(digits):
+    n = 0
+    for digit in digits:
+        n *= 10
+        n += digit
+    return n
+
+
+def permute_factors_in_powers(n, power_pattern, factors,
+                              repeats=False, depth=1,
+                              factor_start=0, used=None):
+    """If power_pattern is 2, 1, 1, iterate every value of a^2*b*c <= n
+    where a, b, c are from sliceable factors"""
+    if used is None:
+        used = set()
+    for fi, factor in enumerate(factors[factor_start:], start=factor_start):
+        # print(" "*depth + str(factor), sorted(used))
+        if not repeats and factor in used:
+            # print(" "*depth + str(factor), sorted(used), "breaking out!")
+            continue
+        my_power = power_pattern[0]
+        my_contrib = factor ** my_power
+        if my_contrib > n:
+            break
+        # print(" "*depth + str(my_contrib), sorted(used))
+        if len(power_pattern) == 1:
+            yield my_contrib
+        else:
+            remaining = n // my_contrib
+            rem_power_pattern = power_pattern[1:]
+            if rem_power_pattern[0] == my_power:
+                if repeats:
+                    next_factor_start = 0
+                else:
+                    next_factor_start = fi+1
+            else:
+                next_factor_start = 0
+            hits = False
+            used.add(factor)
+            for val in permute_factors_in_powers(
+                    remaining, rem_power_pattern, factors, repeats,
+                    depth+1, next_factor_start, used):
+                yield my_contrib * val
+                hits = True
+            used.remove(factor)
+            if not hits:
+                break
