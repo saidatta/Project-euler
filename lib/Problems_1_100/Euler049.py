@@ -1,4 +1,4 @@
-from lib.Euler import list_primality
+from lib.euler import list_primality
 
 def compute():
     LIMIT = 10_000

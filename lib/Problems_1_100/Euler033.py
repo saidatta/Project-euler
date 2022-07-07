@@ -11,7 +11,7 @@ If the product of these four fractions is given in its lowest common terms, find
 '''
 
 #
-from lib.Euler import gcd
+from lib.euler import gcd
 
 d = 1
 numProd, denProd = 1,1

@@ -1,4 +1,4 @@
-from lib.Euler import binomial
+from lib.euler import binomial
 
 
 def compute():

@@ -1,6 +1,6 @@
 import itertools
 
-from lib import Euler
+from lib import euler
 
 TOTAL_NUM_TRUNCATABLE_PRIMES = 11
 STARTING_NUM = 10

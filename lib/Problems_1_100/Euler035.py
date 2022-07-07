@@ -1,4 +1,4 @@
-from lib import Euler
+from lib import euler
 
 
 def compute():

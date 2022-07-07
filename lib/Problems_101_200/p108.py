@@ -13,7 +13,7 @@
 # Therefore the number of solutions for i is the number of divisors of n^2 in the range [1, n].
 # n^2 always has an odd number of divisors. One of them is n. As for the remainder of them, half of them are below n
 # and half of them are above n. So if n^2 has m divisors, then we want (m+1)/2 of them as solutions for i.
-from lib import Euler
+from lib import euler
 import itertools
 
 

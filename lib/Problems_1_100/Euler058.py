@@ -1,5 +1,5 @@
 import fractions, itertools
-from lib import Euler
+from lib import euler
 
 # From the diagram, let's observe the four corners of an n * n square (where n is odd).
 # It's not hard to convince yourself that:

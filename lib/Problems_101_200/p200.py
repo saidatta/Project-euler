@@ -3,7 +3,7 @@
 # p^2q^3 <= N*N*8 (all squbes under that number are found), sort that, then brute force my way
 # through checking for prime_proof_ness by trial division.
 
-from lib.Euler import *
+from lib.euler import *
 
 
 def squbes_please():

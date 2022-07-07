@@ -1,4 +1,4 @@
-from lib.Euler import gcd
+from lib.euler import gcd
 
 a, b = 3, 2
 limit, result = 12000, 0

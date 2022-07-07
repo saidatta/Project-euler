@@ -1,4 +1,4 @@
-from lib.Euler import is_pandigital
+from lib.euler import is_pandigital
 
 fn2, fn1, fn = 1, 1, 0
 
